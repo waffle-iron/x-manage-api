@@ -15,7 +15,8 @@ public interface ProductRepository extends JpaRepository<Product, String> {
 
     Product findById(@Param("id") Long id);
 
-    Product findProductNamed(@Param("pid") Long pid);
+    Product findProductNamed(@Param("pid") Long pid);           // method 로 named query 가 불러와지는지 테스트용
+
 
 }
 

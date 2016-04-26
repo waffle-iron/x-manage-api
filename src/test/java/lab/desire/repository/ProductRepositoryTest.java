@@ -1,6 +1,7 @@
 package lab.desire.repository;
 
 import lab.desire.ManageApplication;
+import lab.desire.entity.Brand;
 import lab.desire.entity.Product;
 import lab.desire.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
@@ -32,15 +33,29 @@ public class ProductRepositoryTest {
 
     @Test
     public void save() throws Exception {
-        Product product = new Product("name", 1, "desc", "#tag", 100);
+        Product product = new Product("name", "desc", "#tag", 100);
         Product p = productRepository.save(product);
         Assert.notNull(p);
     }
 
     @Test
+    public void saveWithBrand() throws Exception {
+//        Brand brand = new Brand("삼디다스");
+//        Product product = new Product("name", "desc", "#tag", 100);
+//        product.setBrand(brand);
+
+        Brand brand = new Brand("니케");
+        Product product = new Product("nike product", "나이키 상품", "#nike #니케", 100);
+        product.setBrand(brand);
+
+        Product p = productRepository.save(product);        // CascadeType 활용
+        Assert.notNull(p);
+    }
+
+    @Test
     public void findById() throws Exception {
-        Product p = productRepository.findById(1L);         // findById !! not findByPid
-        System.out.println(p.toString());
+        Product p = productRepository.findById(2L);         // findById !! not findByPid
+        System.out.println(p.toString());                   // Product 의 ManyToOne 이 LAZY 로딩인 경우는 error 가 나는 게 정상
         Assert.notNull(p);
     }
 
@@ -53,7 +68,7 @@ public class ProductRepositoryTest {
 
     @Test
     public void findByEm() throws Exception {
-        Product p = em.findProductNamed(1L);           // WHERE p.id !! not WHERE p.pid
+        Product p = em.findProductNamed(1L);                // WHERE p.id !! not WHERE p.pid
         System.out.println(p.toString());
         Assert.notNull(p);
     }
@@ -64,8 +79,8 @@ public class ProductRepositoryTest {
         String tag = "new tag";
         String description = "new description";
         int price = 3000;
-        productService.updateProduct(tag, description, price);
-
+        Product p = productService.updateProduct(tag, description, price);
+        Assert.notNull(p);
 
     }
 
