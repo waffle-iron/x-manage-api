@@ -5,7 +5,7 @@
                  version="2.1">
 
     <named-query name="Product.findProductNamed">
-        <query>SELECT p FROM product p WHERE p.id = :pid</query>
+        <query>SELECT p FROM Product p WHERE p.id = :pid</query>
     </named-query>
 
 

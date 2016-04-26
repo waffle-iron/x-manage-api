@@ -6,13 +6,15 @@ import lombok.Data;
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * Created by carrot on 2016. 4. 26..
  */
 
 @Data
-@Entity(name="brand")
+@Table(name="brand")
+@Entity
 @AttributeOverride(name="id", column = @Column(name="brand_id"))
 public class Brand extends BaseEntity {
 

@@ -49,7 +49,7 @@ public class StyleRepositoryTest {
     @Test
     public void findById() throws Exception {
         Style p = styleRepository.findById(1L);         // findById !! not findByPid
-        System.out.println(p.toString());               // Style 의 ManyToOne 이 LAZY 로딩인 경우는 error 가 나는 게 정상
+        System.out.println(p.getName());
         Assert.notNull(p);
     }
 

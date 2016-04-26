@@ -6,13 +6,15 @@ import lombok.Data;
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * Created by carrot on 2016. 4. 26..
  */
 
 @Data
-@Entity(name="stylist")
+@Table(name="stylist")
+@Entity
 @AttributeOverride(name="id", column = @Column(name="stylist_id"))
 public class Stylist extends BaseEntity {
 

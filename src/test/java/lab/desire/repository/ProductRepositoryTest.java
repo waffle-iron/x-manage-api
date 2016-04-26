@@ -55,33 +55,43 @@ public class ProductRepositoryTest {
     @Test
     public void findById() throws Exception {
         Product p = productRepository.findById(2L);         // findById !! not findByPid
-        System.out.println(p.toString());                   // Product 의 ManyToOne 이 LAZY 로딩인 경우는 error 가 나는 게 정상
+        System.out.println(p.getName());
         Assert.notNull(p);
     }
 
     @Test
     public void findProductNamed() throws Exception {
         Product p = productRepository.findProductNamed(1L); // Sping Data JPA 에서는 method 이름만으로 Named 쿼리를 호출할 수 있다
-        System.out.println(p.toString());
+        System.out.println(p.getName());
         Assert.notNull(p);
     }
 
     @Test
     public void findByEm() throws Exception {
         Product p = em.findProductNamed(1L);                // WHERE p.id !! not WHERE p.pid
-        System.out.println(p.toString());
+        System.out.println(p.getName());
         Assert.notNull(p);
     }
 
     @Test
     public void updateProduct() throws Exception {
-
         String tag = "new tag";
         String description = "new description";
         int price = 3000;
         Product p = productService.updateProduct(1L, tag, description, price);
         Assert.notNull(p);
-
     }
 
+    @Test
+    public void updateProduct2() throws Exception {
+        String tag = "new tag3";
+        String description = "new description3";
+
+        Product product = productRepository.findById(1L);
+        product.setTag(tag);
+        product.setDescription(description);
+        product.setPrice(5000);
+        Product p = productRepository.save(product);
+        Assert.notNull(p);
+    }
 }
