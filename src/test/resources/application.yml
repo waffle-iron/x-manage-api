@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    primary:
+      url: jdbc:mysql://localhost:3306/testdb
+      username: carrot
+      password: Carrot0501!
+      driver-class-name: com.mysql.jdbc.Driver
+      test-while-idle: true
+      time-between-eviction-runs-millis: 86400000
+      validation-query: SELECT 1
+      continue-on-error: true
+      test-on-borrow: true
+      max-active: 2
+      max-wait: 86400000
+      timeBetweenEvictionRunsMillis: 86400000
+      validationQuery: SELECT 1
+      testOnBorrow: true
+      testOnConnect: true
+      testWhileIdle: true
+    secondary:
+      url: jdbc:mysql://localhost:3306/testdb
+      username: carrot
+      password: Carrot0501!
+      driver-class-name: com.mysql.jdbc.Driver
+      test-while-idle: true
+      time-between-eviction-runs-millis: 86400000
+      validation-query: SELECT 1
+      continue-on-error: true
+      test-on-borrow: true
+      max-active: 2
+      max-wait: 86400000
+      timeBetweenEvictionRunsMillis: 86400000
+      validationQuery: SELECT 1
+      testOnBorrow: true
+      testOnConnect: true
+      testWhileIdle: true
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+    properties:
+      hibernate:
+        format_sql: true
