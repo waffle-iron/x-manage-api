@@ -29,6 +29,8 @@ public class Product extends BaseEntity {
     @OneToMany(mappedBy = "product")
     List<ProductImage> productImageList = new ArrayList<ProductImage>();
 
+    // add style mapping info
+
     public Product() {}
 
     public Product(String name, String description, String tag, int price) {
