@@ -79,7 +79,7 @@ public class ProductRepositoryTest {
         String tag = "new tag";
         String description = "new description";
         int price = 3000;
-        Product p = productService.updateProduct(tag, description, price);
+        Product p = productService.updateProduct(1L, tag, description, price);
         Assert.notNull(p);
 
     }

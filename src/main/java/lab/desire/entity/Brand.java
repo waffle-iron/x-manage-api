@@ -16,11 +16,9 @@ import javax.persistence.Entity;
 @AttributeOverride(name="id", column = @Column(name="brand_id"))
 public class Brand extends BaseEntity {
 
-
     public Brand() {}
 
     public Brand(String name) {
         this.name = name;
     }
-
 }

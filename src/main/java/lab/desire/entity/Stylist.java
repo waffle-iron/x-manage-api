@@ -16,7 +16,11 @@ import javax.persistence.Entity;
 @AttributeOverride(name="id", column = @Column(name="stylist_id"))
 public class Stylist extends BaseEntity {
 
-
     public Stylist() {}
 
+    public Stylist(String name) {
+        this.name = name;
+    }
 }
+
+

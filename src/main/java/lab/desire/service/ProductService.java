@@ -17,8 +17,8 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public Product updateProduct(String tag, String description, int price) {
-        Product product = productRepository.findById(1L);
+    public Product updateProduct(Long pid, String tag, String description, int price) {
+        Product product = productRepository.findById(pid);
         product.setTag(tag);
         product.setDescription(description);
         product.setPrice(price);
