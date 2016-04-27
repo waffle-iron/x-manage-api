@@ -25,14 +25,8 @@ public class Style extends BaseEntity {
     @JoinColumn(name="stylist_id")
     Stylist stylist;
 
-
-    // feature #9 수정
-    // feature #9 수정
-    // feature #9 수정
-
     @OneToMany(mappedBy = "style")
     List<StyleImage> styleImageList = new ArrayList<StyleImage>();
-
 
     public Style() {}
 
