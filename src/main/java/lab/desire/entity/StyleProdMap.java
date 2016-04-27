@@ -20,8 +20,6 @@ public class StyleProdMap {
     @JoinColumn(name="sid")
     Style style;
 
-
-
     @ManyToOne
     @JoinColumn(name="pid")
     Product product;
