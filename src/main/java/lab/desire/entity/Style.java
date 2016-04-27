@@ -30,7 +30,6 @@ public class Style extends BaseEntity {
     @OneToMany(mappedBy = "style")
     List<StyleImage> styleImageList = new ArrayList<StyleImage>();
 
-    // add product mapping info
 
     public Style() {}
 
