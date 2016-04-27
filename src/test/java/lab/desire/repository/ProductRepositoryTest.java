@@ -33,9 +33,12 @@ public class ProductRepositoryTest {
 
     @Test
     public void save() throws Exception {
-        Product product = new Product("name", "desc", "#tag", 100);
-        Product p = productRepository.save(product);
-        Assert.notNull(p);
+
+        for (int i=10;i<30;i++) {
+            Product product = new Product("prod"+i, "desc"+i, "#"+i, 100);
+            Product p = productRepository.save(product);
+            Assert.notNull(p);
+        }
     }
 
     @Test
