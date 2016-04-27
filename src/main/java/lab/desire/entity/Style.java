@@ -26,6 +26,7 @@ public class Style extends BaseEntity {
     Stylist stylist;
 
 
+    // feature #9 수정
 
     @OneToMany(mappedBy = "style")
     List<StyleImage> styleImageList = new ArrayList<StyleImage>();
