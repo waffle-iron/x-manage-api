@@ -20,7 +20,7 @@ public class Brand extends BaseEntity {
 
     public Brand() {}
 
-    // #issue21 twice again
+    // #issue25 check base repository
 
     public Brand(String name) {
         this.name = name;
