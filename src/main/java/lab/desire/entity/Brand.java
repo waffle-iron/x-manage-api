@@ -20,6 +20,8 @@ public class Brand extends BaseEntity {
 
     public Brand() {}
 
+    // #issue21 twice again
+
     public Brand(String name) {
         this.name = name;
     }
